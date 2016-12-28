@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-metadata-files",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Metalsmith Metadata Files Plugin",
   "files": [
     "index.js"
