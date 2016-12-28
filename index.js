@@ -1,5 +1,5 @@
 var path = require('path')
-var extend = require('extend-shallow')
+var extend = require('soft-extend')
 var multimatch = require('multimatch')
 
 module.exports = function (opts) {
