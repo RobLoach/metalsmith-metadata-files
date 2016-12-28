@@ -1,0 +1,39 @@
+{
+  "name": "metalsmith-metadata-files",
+  "version": "0.0.1",
+  "description": "Metalsmith Metadata Files Plugin",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "node test",
+    "posttest": "npm run xo",
+    "xo": "xo --space --no-semicolon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/RobLoach/metalsmith-metadata-files"
+  },
+  "keywords": [
+    "metalsmith",
+    "jstransformer"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RobLoach/metalsmith-metadata-files/issues"
+  },
+  "homepage": "https://github.com/RobLoach/metalsmith-metadata-files",
+  "dependencies": {
+    "extend": "^3.0.0",
+    "multimatch": "^2.1.0"
+  },
+  "devDependencies": {
+    "assert-dir-equal": "1.*",
+    "jstransformer-twig": "^1.2.0",
+    "metalsmith": "2.*",
+    "metalsmith-jstransformer": "*",
+    "rimraf": "^2.5.4",
+    "testit": "^2.1.2",
+    "xo": "^0.17.1"
+  }
+}
