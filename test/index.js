@@ -43,4 +43,5 @@ function test(name, plugins) {
 
 testit('metalsmith-jstransformer', function () {
   test('basic')
+  test('inherited')
 })

@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-metadata-files",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Metalsmith Metadata Files Plugin",
   "files": [
     "index.js"
@@ -24,8 +24,8 @@
   },
   "homepage": "https://github.com/kalamuna/metalsmith-metadata-files",
   "dependencies": {
-    "multimatch": "^2.1.0",
-    "soft-extend": "^0.1.3"
+    "extend-shallow": "^2.0.1",
+    "multimatch": "^2.1.0"
   },
   "devDependencies": {
     "assert-dir-equal": "1.*",

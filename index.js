@@ -1,5 +1,5 @@
 var path = require('path')
-var extend = require('soft-extend')
+var extend = require('extend-shallow')
 var multimatch = require('multimatch')
 
 module.exports = function (opts) {
@@ -37,13 +37,44 @@ module.exports = function (opts) {
           if (destFiles[x] && destFiles[x] !== jsonFile) {
             // Merge the JSON contents into the destination file.
             extend(files[destFiles[x]], contents)
+
+            // Indicate that the metadata file was used. Mark it for deletion.
+            files[jsonFile]['metadata-files-used'] = true
           }
         }
-
-        // Now that we are done with the JSON file, delete it.
-        delete files[jsonFile]
+        files[jsonFile].metadata = contents
       }
     }
+
+    // Inheritable metadata files.
+    for (var m in filesKeys) {
+      if (filesKeys[m]) {
+        var filename = filesKeys[m]
+        var file = files[filename]
+        // See if there are metadata-files to import.
+        for (var z in file['metadata-files'] || []) {
+          if (file['metadata-files'][z]) {
+            // Find the metadata file.
+            var metadataFileName = file['metadata-files'][z]
+            if (files[metadataFileName] && files[metadataFileName].metadata) {
+              // Merge the JSON content into the destination.
+              extend(files[filename], files[metadataFileName].metadata)
+
+              // Indicate that the metadata file was used. Mark it for deletion.
+              files[metadataFileName]['metadata-files-used'] = true
+            }
+          }
+        }
+      }
+    }
+
+    // Delete all used metadata JSON files.
+    for (var n in jsonFiles) {
+      if (jsonFiles[n] && files[jsonFiles[n]]['metadata-files-used']) {
+        delete files[jsonFiles[n]]
+      }
+    }
+
     return done()
   }
 }

@@ -1,0 +1,7 @@
+{
+  "do": "one",
+  "metadata-files": [
+    "somefile.json",
+    "subfolder/someotherfile.json"
+  ]
+}

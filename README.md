@@ -48,14 +48,25 @@ The following example uses [Twig](https://github.com/twigjs/twig.js) through [Me
 #### `src/example.twig`
 
 ```
-<div class="hello">Hello, {{name}}!</div>
+<div class="{{class}}">Hello, {{name}}!</div>
 ```
 
 #### `src/example.json`
 
 ```
 {
-  "name": "World"
+  "name": "World",
+  "metadata-files": [
+    "moreoptions.json"
+  ]
+}
+```
+
+### `moreoptions.json`
+
+```
+{
+  "class": "hello"
 }
 ```
 
@@ -64,6 +75,12 @@ The following example uses [Twig](https://github.com/twigjs/twig.js) through [Me
 ``` html
 <div class="hello">Hello, World!</div>
 ```
+
+### Options
+
+#### `metadata-files`
+
+An array depicting additional metadata files that are inheritted into the parent file's metadata. Can be added to the file's YAML front-matter, or inside the .json files themselves.
 
 ## Configuration
 
