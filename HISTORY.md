@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.1.0: 2016-01-10
+
+- Adds support for referencing external metadata-files
+
 ## v2.0.0: 2016-12-28
 
 - Use [extend-shallow](https://www.npmjs.com/package/extend-shallow) to merge the data

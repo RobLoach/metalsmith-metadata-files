@@ -1,0 +1,6 @@
+{
+  "greeting": "metadata-files://thegreeting.json",
+  "something": {
+    "else": "metadata-files://thegreeting.json"
+  }
+}

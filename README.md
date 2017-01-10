@@ -82,6 +82,28 @@ The following example uses [Twig](https://github.com/twigjs/twig.js) through [Me
 
 An array depicting additional metadata files that are inheritted into the parent file's metadata. Can be added to the file's YAML front-matter, or inside the .json files themselves.
 
+#### `metadata-files://`
+
+String values that begin with `metadata-files://` will inject the file into the metadata itself.
+
+```
+{
+  "person": "metadata-files://component/charlie.json"
+}
+```
+```
+{
+  "name": "Charlie"
+}
+```
+```
+{
+  "person": {
+    "name": "Charlie"
+  }
+}
+```
+
 ## Configuration
 
 ### `.pattern`
