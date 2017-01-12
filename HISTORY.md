@@ -2,7 +2,7 @@
 
 ## v2.2.0: 2016-01-12
 
-- Adds `opts.inheritFilePrefix` to allow changing the inherited metadata file prefix
+- Added `opts.inheritFilePrefix` to allow changing the inherited metadata file prefix
 
 ## v2.1.0: 2016-01-10
 
