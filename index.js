@@ -8,6 +8,7 @@ module.exports = function (opts) {
   opts = opts || {}
   opts.pattern = opts.pattern || '*.json'
   opts.patternOptions = opts.patternOptions || {matchBase: true}
+  opts.inheritFilePrefix = opts.inheritFilePrefix || 'metadata-files://'
 
   // Execute the plugin.
   return function (files, metalsmith, done) {
@@ -43,9 +44,10 @@ module.exports = function (opts) {
             // Check if the object is a string.
             if (typeof val === 'string' || val instanceof String) {
               // See if it starts with metadata-files://.
-              if (val.substring(0, 17) === 'metadata-files://') {
+              var inheritFileLength = opts.inheritFilePrefix.length
+              if (val.substring(0, inheritFileLength) === opts.inheritFilePrefix) {
                 // Retrieve the metadata file that it is to retrieve.
-                var objectFile = val.substring(17)
+                var objectFile = val.substring(inheritFileLength)
                 // Find its own metadata.
                 if (files[objectFile] && files[objectFile].metadata) {
                   // Update the object to be the injected metadata.

@@ -1,0 +1,6 @@
+{
+  "greeting": "@metadatafile/thegreeting.json",
+  "something": {
+    "else": "@metadatafile/thegreeting.json"
+  }
+}

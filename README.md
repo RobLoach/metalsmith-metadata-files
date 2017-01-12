@@ -114,6 +114,10 @@ The pattern used to find the JSON files. Defaults to `*.json`.
 
 The [minimatch options](https://github.com/isaacs/minimatch#options) that are used when matching against the JSON Pattern. Defaults to `{ matchBase: true }`.
 
+### `.inheritFilePrefix`
+
+The prefix that is expected when searching for inheritted files. Defaults to `metadata-files://`.
+
 ## License
 
 MIT
