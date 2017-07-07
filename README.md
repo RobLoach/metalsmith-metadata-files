@@ -1,8 +1,7 @@
 # Metalsmith Metadata Files [![NPM version](https://img.shields.io/npm/v/metalsmith-metadata-files.svg)](https://www.npmjs.org/package/metalsmith-metadata-files)
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/kalamuna/metalsmith-metadata-files.svg)](https://greenkeeper.io/)
-
 [![Build Status](https://img.shields.io/travis/kalamuna/metalsmith-metadata-files/master.svg)](https://travis-ci.org/kalamuna/metalsmith-metadata-files)
+[![Greenkeeper badge](https://badges.greenkeeper.io/kalamuna/metalsmith-metadata-files.svg)](https://greenkeeper.io/)
 [![Dependency Status](https://david-dm.org/kalamuna/metalsmith-metadata-files.png)](https://david-dm.org/kalamuna/metalsmith-metadata-files)
 
 [Metalsmith](http://metalsmith.io) plugin to inject file metadata from matching `.json` files.
