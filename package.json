@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/kalamuna/metalsmith-metadata-files",
   "dependencies": {
-    "extend-shallow": "^3.0.0",
+    "extend-shallow": "^3.0.2",
     "multimatch": "^2.1.0",
     "traverse": "^0.6.6"
   },
