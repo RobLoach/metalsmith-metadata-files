@@ -35,6 +35,6 @@
     "metalsmith-jstransformer": "*",
     "rimraf": "^2.5.4",
     "testit": "^3.0.0",
-    "xo": "^0.18.2"
+    "xo": "^0.20.0"
   }
 }
