@@ -87,16 +87,19 @@ An array depicting additional metadata files that are inheritted into the parent
 
 String values that begin with `metadata-files://` will inject the file into the metadata itself.
 
+##### Options
 ```
 {
   "person": "metadata-files://component/charlie.json"
 }
 ```
+##### charlie.json
 ```
 {
   "name": "Charlie"
 }
 ```
+##### Result
 ```
 {
   "person": {
