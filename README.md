@@ -1,6 +1,6 @@
-# Metalsmith Metadata Files [![NPM version](https://img.shields.io/npm/v/metalsmith-metadata-files.svg)](https://www.npmjs.org/package/metalsmith-metadata-files)
+# Metalsmith Metadata Files [![npm version](https://badge.fury.io/js/metalsmith-metadata-files.svg)](https://badge.fury.io/js/metalsmith-metadata-files)
 
-[![Build Status](https://img.shields.io/travis/kalamuna/metalsmith-metadata-files/master.svg)](https://travis-ci.org/kalamuna/metalsmith-metadata-files)
+[![Build Status](https://travis-ci.org/kalamuna/metalsmith-metadata-files.svg?branch=master)](https://travis-ci.org/kalamuna/metalsmith-metadata-files)
 [![Greenkeeper badge](https://badges.greenkeeper.io/kalamuna/metalsmith-metadata-files.svg)](https://greenkeeper.io/)
 [![Dependency Status](https://david-dm.org/kalamuna/metalsmith-metadata-files.png)](https://david-dm.org/kalamuna/metalsmith-metadata-files)
 
