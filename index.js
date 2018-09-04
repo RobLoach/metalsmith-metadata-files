@@ -25,8 +25,8 @@ module.exports = function (opts) {
         let contents = null
         try {
           contents = JSON.parse(files[jsonFile].contents)
-        } catch (err) {
-          return done(err + ' ' + jsonFile)
+        } catch (error) {
+          return done(error + ' ' + jsonFile)
         }
         files[jsonFile].metadata = contents
       }
