@@ -28,6 +28,7 @@ module.exports = function (opts) {
         } catch (error) {
           return done(error + ' ' + jsonFile)
         }
+
         files[jsonFile].metadata = contents
       }
     }

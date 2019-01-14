@@ -16,6 +16,7 @@ function test(name, plugins) {
     if (!plugins['..']) {
       plugins['..'] = {}
     }
+
     if (!plugins['metalsmith-jstransformer']) {
       plugins['metalsmith-jstransformer'] = {}
     }
@@ -27,7 +28,7 @@ function test(name, plugins) {
     // Boot up Metalsmith and load the plugins.
     const metalsmith = new Metalsmith(testPath)
     Object.keys(plugins).forEach(pluginName => {
-      metalsmith.use(require(pluginName)(plugins[pluginName])) // eslint-disable-line import/no-dynamic-require
+      metalsmith.use(require(pluginName)(plugins[pluginName]))
     })
 
     // Build with Metalsmith.
@@ -35,6 +36,7 @@ function test(name, plugins) {
       if (err) {
         return done(err)
       }
+
       assertDir(testPath + '/build', testPath + '/expected')
       done()
     })
