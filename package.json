@@ -33,7 +33,7 @@
     "jstransformer-twig": "^1.2.0",
     "metalsmith": "2.*",
     "metalsmith-jstransformer": "*",
-    "rimraf": "^2.5.4",
+    "rimraf": "^3.0.0",
     "testit": "^3.0.0",
     "xo": "*"
   }
