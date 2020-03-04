@@ -32,7 +32,7 @@
     "assert-dir-equal": "1.*",
     "jstransformer-twig": "^1.2.0",
     "metalsmith": "2.*",
-    "metalsmith-jstransformer": "*",
+    "metalsmith-jstransformer": ">=1.0.0",
     "rimraf": "^3.0.0",
     "testit": "^3.0.0",
     "xo": "*"
