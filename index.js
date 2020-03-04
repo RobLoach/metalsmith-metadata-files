@@ -45,9 +45,9 @@ module.exports = function (opts) {
             if (typeof val === 'string' || val instanceof String) {
               // See if it starts with metadata-files://.
               const inheritFileLength = opts.inheritFilePrefix.length
-              if (val.substring(0, inheritFileLength) === opts.inheritFilePrefix) {
+              if (val.slice(0, inheritFileLength) === opts.inheritFilePrefix) {
                 // Retrieve the metadata file that it is to retrieve.
-                const objectFile = val.substring(inheritFileLength)
+                const objectFile = val.slice(inheritFileLength)
                 // Find its own metadata.
                 if (files[objectFile] && files[objectFile].metadata) {
                   // Update the object to be the injected metadata.

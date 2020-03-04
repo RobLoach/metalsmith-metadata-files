@@ -1,6 +1,6 @@
 # Changelog
 
-## v2.x: xxxx-xx-xx
+## v2.2.1: 2020-04-04
 
 - Update dependencies
 
