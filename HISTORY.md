@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.0.0: 2020-10-02
+
+- YAML file support
+
 ## v2.2.1: 2020-04-04
 
 - Update dependencies

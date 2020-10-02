@@ -47,6 +47,7 @@ testit('metalsmith-jstransformer', () => {
   test('basic')
   test('inherited')
   test('ref')
+  test('yaml')
   test('opts-inheritfileprefix', {
     '..': {
       inheritFilePrefix: '@metadatafile/'
