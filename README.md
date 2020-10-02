@@ -4,7 +4,7 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/kalamuna/metalsmith-metadata-files.svg)](https://greenkeeper.io/)
 [![Dependency Status](https://david-dm.org/kalamuna/metalsmith-metadata-files.png)](https://david-dm.org/kalamuna/metalsmith-metadata-files)
 
-[Metalsmith](http://metalsmith.io) plugin to inject file metadata from matching `.json` files.
+[Metalsmith](http://metalsmith.io) plugin to inject file metadata from matching `.json` or `.yaml` files.
 
 ## Installation
 
@@ -18,7 +18,7 @@ If you are using the command-line version of Metalsmith, you can install via npm
 {
   "plugins": {
     "metalsmith-metadata-files": {
-      "pattern": "**.json"
+      "pattern": "{**.json,**.yaml}"
     }
   }
 }
@@ -32,13 +32,13 @@ If you are using the JS Api for Metalsmith, then you can require the module and 
 var metadataFiles = require('metalsmith-metadata-files');
 
 metalsmith.use(metadataFiles({
-  'pattern': '**.json'
+  'pattern': '{**.json,**.yaml}'
 }));
 ```
 
 ## Convention
 
-Create `.json` files along-side your content. The data from these files will be injected into the metadata into the matching file.
+Create `.json` or `.yaml` files along-side your content. The data from these files will be injected into the metadata into the matching file.
 
 ### Example
 
@@ -112,7 +112,7 @@ String values that begin with `metadata-files://` will inject the file into the 
 
 ### `.pattern`
 
-The pattern used to find the JSON files. Defaults to `*.json`.
+The pattern used to find the JSON files. Defaults to `{*.json|*.yaml}`.
 
 ### `.patternOptions`
 

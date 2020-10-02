@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-metadata-files",
-  "version": "2.2.1",
+  "version": "3.0.0",
   "description": "Metalsmith Metadata Files Plugin",
   "files": [
     "index.js"
@@ -26,11 +26,12 @@
   "dependencies": {
     "extend-shallow": "^3.0.2",
     "multimatch": "^4.0.0",
-    "traverse": "^0.6.6"
+    "traverse": "^0.6.6",
+    "yaml": "^1.10.0"
   },
   "devDependencies": {
     "assert-dir-equal": "1.*",
-    "jstransformer-twig": "^1.6.1",
+    "jstransformer-twig": "^1.6.2",
     "metalsmith": "2.*",
     "metalsmith-jstransformer": "*",
     "rimraf": "^3.0.2",

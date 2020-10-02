@@ -2,31 +2,42 @@ const path = require('path')
 const extend = require('extend-shallow')
 const multimatch = require('multimatch')
 const traverse = require('traverse')
+const yaml = require('yaml')
 
-module.exports = function (opts) {
+module.exports = function (options) {
   // Prepare the options.
-  opts = opts || {}
-  opts.pattern = opts.pattern || '*.json'
-  opts.patternOptions = opts.patternOptions || {matchBase: true}
-  opts.inheritFilePrefix = opts.inheritFilePrefix || 'metadata-files://'
+  options = options || {}
+  options.pattern = options.pattern || '{*.json,*.yaml}'
+  options.patternOptions = options.patternOptions || {matchBase: true}
+  options.inheritFilePrefix = options.inheritFilePrefix || 'metadata-files://'
 
   // Execute the plugin.
   return function (files, metalsmith, done) {
     // Find every JSON file.
     const filesKeys = Object.keys(files)
-    const jsonFiles = multimatch(filesKeys, opts.pattern, opts.patternOptions)
+    const jsonFiles = multimatch(filesKeys, options.pattern, options.patternOptions)
     let jsonFile = null
     for (const i in jsonFiles) {
       if (jsonFiles[i]) {
         // Retrieve information about the JSON file.
         jsonFile = jsonFiles[i]
+        let contents = {}
 
-        // Retrieve the JSON contents.
-        let contents = null
-        try {
-          contents = JSON.parse(files[jsonFile].contents)
-        } catch (error) {
-          return done(error + ' ' + jsonFile)
+        // Determine whether to parse it with JSON or YAML.
+        if (jsonFile.endsWith('.yaml')) {
+          // Pass the contents through YAML.
+          try {
+            contents = yaml.parse(files[jsonFile].contents.toString())
+          } catch (error) {
+            return done(error + ' (' + jsonFile + ')')
+          }
+        } else {
+          // Retrieve the JSON contents.
+          try {
+            contents = JSON.parse(files[jsonFile].contents)
+          } catch (error) {
+            return done(error + ' (' + jsonFile + ')')
+          }
         }
 
         files[jsonFile].metadata = contents
@@ -40,14 +51,14 @@ module.exports = function (opts) {
         // See if the JSON file has metadata.
         if (files[jsonFile].metadata) {
           // Traverse through all entries in the metadata.
-          traverse(files[jsonFile].metadata).forEach(function (val) {
+          traverse(files[jsonFile].metadata).forEach(function (value) {
             // Check if the object is a string.
-            if (typeof val === 'string' || val instanceof String) {
+            if (typeof value === 'string' || value instanceof String) {
               // See if it starts with metadata-files://.
-              const inheritFileLength = opts.inheritFilePrefix.length
-              if (val.slice(0, inheritFileLength) === opts.inheritFilePrefix) {
+              const inheritFileLength = options.inheritFilePrefix.length
+              if (value.slice(0, inheritFileLength) === options.inheritFilePrefix) {
                 // Retrieve the metadata file that it is to retrieve.
-                const objectFile = val.slice(inheritFileLength)
+                const objectFile = value.slice(inheritFileLength)
                 // Find its own metadata.
                 if (files[objectFile] && files[objectFile].metadata) {
                   // Update the object to be the injected metadata.
