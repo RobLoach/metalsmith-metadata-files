@@ -24,7 +24,7 @@ module.exports = function (options) {
         let contents = {}
 
         // Determine whether to parse it with JSON or YAML.
-        if (jsonFile.endsWith('.yaml')) {
+        if (jsonFile.endsWith('.yaml') || jsonFile.endsWith('.yml')) {
           // Pass the contents through YAML.
           try {
             contents = yaml.parse(files[jsonFile].contents.toString())

@@ -1,6 +1,6 @@
 # Changelog
 
-## v3.0.0: 2020-10-02
+## v3.0.0: 2020-10-07
 
 - YAML file support
 
